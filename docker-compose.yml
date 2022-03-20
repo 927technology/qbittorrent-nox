@@ -1,0 +1,15 @@
+version: "3.2"
+
+services:
+  nox:
+    hostname: nox
+    image: 927technology/qbittorrent-nox:0.6
+    environment:
+      - nox_password=<your encrypted nox password>
+      - nox_ipaddr=*
+      - nox_port=8080
+      - nox_username=admin
+    ports:
+      - 8080:8080
+    volumes:
+      - ./torrent:/torrent
