@@ -3,6 +3,11 @@
 #create config file if missing
 [ -d /home/nox/config/qBittorrent ] || mkdir -p /home/nox/config/qBittorrent
 
+#validate env variables
+#[ -z ${nox_password} ] && echo password blank, do nothing
+[ -z ${nox_ipaddr} ] && export nox_ipaddr=*
+[ -z ${nox_port} ] && export nox_port=8080
+[ -z ${nox_username} ] && export nox_username=admin
 
 #create config file
 envsubst << EOF > /home/nox/.config/qBittorrent/qBittorrent.conf
