@@ -2,10 +2,11 @@
 #date 20220320
 #nox server
 
-FROM ubuntu:21.04
+FROM ubuntu:20.04
 LABEL maintainer="cmurray@927.technology"
 
-ENV version=0.6
+ENV version=0.7
+ENV DEBIAN_FRONTEND=noninteractive
 
 #update system
 RUN apt update

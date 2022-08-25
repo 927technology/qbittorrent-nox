@@ -8,6 +8,7 @@
 [ -z ${nox_ipaddr} ] && export nox_ipaddr=*
 [ -z ${nox_port} ] && export nox_port=8080
 [ -z ${nox_username} ] && export nox_username=admin
+[ -z ${nox_password} ] && export nox_password= || export nox_password="@ByteArray(${nox_password})"
 
 #create config file
 envsubst << EOF > /home/nox/.config/qBittorrent/qBittorrent.conf
@@ -69,14 +70,14 @@ WebUI\ClickjackingProtection=true
 WebUI\HTTPS\Enabled=false
 WebUI\HostHeaderValidation=true
 WebUI\LocalHostAuth=true
-WebUI\Password_PBKDF2="@ByteArray(${nox_password})"
-WebUI\Password_ha1=@BiteArray(${nox_password})
+WebUI\Password_PBKDF2=
+WebUI\Password_ha1=${nox_password}
 WebUI\Port=${nox_port}
 WebUI\RootFolder=
 
 WebUI\ServerDomains=*
 WebUI\UseUPnP=true
-WebUI\Username=${nox_username}
+WebUI\Username=admin
 EOF
 
 #start nox
