@@ -5,7 +5,7 @@ services:
     hostname: nox
     image: 927technology/qbittorrent-nox:0.6
     environment:
-      - nox_password=<your encrypted nox password>
+      - nox_password=YI5Fl0hPYiaelcUlX/d+yA==:23cCRFRcY99l+Pwd4pjYJCqYP8Fn/++yUg4df0poMCpD3407WdWtJHEGJhpNktbs+AKuqZqNIHdmheZu8euHeQ==
       - nox_ipaddr=*
       - nox_port=8080
       - nox_username=admin
